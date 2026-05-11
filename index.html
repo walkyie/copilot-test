@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 Web 探索之路</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .slide-in-down {
+            animation: slideInDown 0.6s ease-out forwards;
+        }
+
+        .card-item {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .card-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .card-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .card-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .title-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        opacity: 0;
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="navbar-blur fixed top-0 w-full z-50 border-b border-white border-opacity-20 slide-in-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold title-gradient">✨ 探索之旅</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#learning" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">学习进度</a>
+                    <a href="#projects" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">我的项目</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">联系我</a>
+                </div>
+                <button class="md:hidden text-gray-700 hover:text-purple-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="pt-32 pb-20">
+        <!-- 大标题 -->
+        <section class="text-center mb-20 fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 title-gradient">
+                我的 Web 探索之路
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                欢迎来到我的个人导航主页，这里记录了我在前端开发领域的学习之旅和项目成果
+            </p>
+        </section>
+
+        <!-- 卡片容器 -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 卡片 1: 学习进度 -->
+                <div id="learning" class="card-item">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full mb-6 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5.353-1.956.353 6.269a1 1 0 001.986 0l.353-6.269 5.353 1.956a1 1 0 001.169-1.409l-7-14z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">📚 学习进度</h2>
+                        <p class="text-gray-600 mb-6 text-center">
+                            不断学习新技术，掌握前端开发的核心概念和最佳实践。
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm font-medium text-gray-700">React</span>
+                                    <span class="text-sm font-medium text-blue-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Tailwind CSS</span>
+                                    <span class="text-sm font-medium text-blue-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-sm font-medium text-gray-700">JavaScript</span>
+                                    <span class="text-sm font-medium text-blue-600">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-blue-400 to-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                            查看详情 →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 卡片 2: 我的项目 -->
+                <div id="projects" class="card-item">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mb-6 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M7 3a1 1 0 000 2h6a1 1 0 000-2H7zM4 7a1 1 0 011-1h10a1 1 0 011 1v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">💼 我的项目</h2>
+                        <p class="text-gray-600 mb-6 text-center">
+                            展示我完成的各类前端项目，包括个人作品和开源贡献。
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-purple-50 transition-colors">
+                                <span class="text-2xl mr-3">🌐</span>
+                                <span class="font-medium text-gray-700">个人博客</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-purple-50 transition-colors">
+                                <span class="text-2xl mr-3">🛍️</span>
+                                <span class="font-medium text-gray-700">电商平台</span>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-purple-50 transition-colors">
+                                <span class="text-2xl mr-3">📱</span>
+                                <span class="font-medium text-gray-700">移动应用</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-purple-400 to-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                            查看作品 →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 卡片 3: 联系我 -->
+                <div id="contact" class="card-item">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full mb-6 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">💬 联系我</h2>
+                        <p class="text-gray-600 mb-6 text-center">
+                            如果您有任何问题或合作机会，欢迎通过以下方式联系我。
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <a href="mailto:walkyrie2010@outlook.com" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-pink-50 transition-colors group">
+                                <span class="text-lg mr-3">📧</span>
+                                <span class="font-medium text-gray-700 group-hover:text-pink-600 transition-colors">Email</span>
+                            </a>
+                            <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-pink-50 transition-colors group">
+                                <span class="text-lg mr-3">🐙</span>
+                                <span class="font-medium text-gray-700 group-hover:text-pink-600 transition-colors">GitHub</span>
+                            </a>
+                            <a href="#" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-pink-50 transition-colors group">
+                                <span class="text-lg mr-3">💼</span>
+                                <span class="font-medium text-gray-700 group-hover:text-pink-600 transition-colors">LinkedIn</span>
+                            </a>
+                        </div>
+                        <button class="w-full bg-gradient-to-r from-pink-400 to-pink-600 text-white font-medium py-2 px-4 rounded-lg hover:shadow-lg transition-all duration-300">
+                            发送消息 →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="text-center mt-20 text-gray-600">
+            <p class="mb-2">© 2026 我的 Web 探索之路. 保留所有权利。</p>
+            <p class="text-sm">精心打造的个人导航主页 ✨</p>
+        </footer>
+    </main>
+</body>
+</html>
